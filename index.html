@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IOC Extractor & Triage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Toast notifications container -->
+    <div id="toast-container"></div>
+
+    <!-- Sticky header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="header-title">IOC Extractor & Triage</h1>
+            <div class="header-buttons">
+                <button id="clear-btn" class="btn btn-secondary" title="Clear all data (Ctrl+K)">Clear</button>
+                <button id="export-csv-btn" class="btn btn-primary">Export CSV</button>
+                <button id="export-json-btn" class="btn btn-primary">Export JSON</button>
+                <button id="copy-all-btn" class="btn btn-accent">Copy All</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main-content">
+        <!-- Input panel -->
+        <div class="input-panel">
+            <div class="input-section">
+                <textarea 
+                    id="input-text" 
+                    class="input-textarea" 
+                    placeholder="Paste raw text, headers, or logs here…"
+                    spellcheck="false"
+                ></textarea>
+                <div class="input-buttons">
+                    <button id="extract-btn" class="btn btn-primary btn-large" title="Extract IOCs (Ctrl+Enter)">Extract IoCs</button>
+                    <button id="sample-data-btn" class="btn btn-secondary">Sample Data</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results panel -->
+        <div class="results-panel">
+            <div id="results-container" class="results-container">
+                <div class="no-results">
+                    <div class="no-results-icon">🔍</div>
+                    <p>No IOCs extracted yet</p>
+                    <p class="no-results-hint">Paste some text and click "Extract IoCs" to begin</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>All processing happens locally in your browser.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
